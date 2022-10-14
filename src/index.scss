@@ -1,0 +1,80 @@
+.fromContainer {
+  background-color: #a7bcff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .formWrapper {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 10px 20px;
+    align-items: center;
+    gap: 10px;
+
+    .logo {
+      color: #5b5d8d;
+      align-items: center;
+      font-weight: bold;
+      font-size: 28px;
+      margin: 0;
+    }
+
+    .title {
+      color: #5b5d8d;
+      align-items: center;
+      margin: 0;
+
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+
+      input {
+        border: none;
+        border-bottom: 1px solid #a7bcff;
+        &::placeholder {
+          color: rgb(175, 175, 175);
+        }
+      }
+
+      label {
+        display: flex;
+        flex-direction: row;
+        color: #a7bcff;
+        align-items: center;
+        cursor: pointer;
+
+        img {
+          width: 32px;
+        }
+
+        &:hover {
+          color: #5b5d8d;
+        }
+      }
+
+      button {
+        border: none;
+        padding: 10px;
+        cursor: pointer;
+        background-color: #a7bcff;
+        color: white;
+        font-weight: bold;
+        &:hover {
+          background-color: #5b5d8d;
+        }
+      }
+    }
+
+    p {
+      color: #5d5b8b;
+      font-size: 12px;
+      margin-top: 10px;
+    }
+  }
+}
