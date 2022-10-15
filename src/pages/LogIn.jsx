@@ -1,4 +1,5 @@
 import React from 'react'
+import '../index.scss'
 
 const LogIn = () => {
 
@@ -7,7 +8,7 @@ const LogIn = () => {
     }
     
   return (
-    <div className='fromContainer'>
+    <div className='formContainer'>
         <div className='formWrapper'>
             <h2 className='logo'>Chat Me</h2>
             <h4 className='title'>Log In</h4>

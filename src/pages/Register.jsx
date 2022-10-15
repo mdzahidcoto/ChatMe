@@ -9,7 +9,7 @@ const Register = () => {
     }
     
   return (
-    <div className='fromContainer'>
+    <div className='formContainer'>
         <div className='formWrapper'>
             <h2 className='logo'>Chat Me</h2>
             <h5 className='title'>Registration</h5>
