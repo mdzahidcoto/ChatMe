@@ -217,19 +217,9 @@
       .chatIcons {
         display: flex;
         gap: 10px;
-
-        button {
-          border: none;
-          // background-color: #5d5b8d;
-        }
-
-        a {
-          text-decoration: none;
-          // background-color: #5d5b8d;
-        }
-
+        
         img {
-          height: 24px;
+          height: 12px;
           cursor: pointer;
           background-color: transparent;
         }
