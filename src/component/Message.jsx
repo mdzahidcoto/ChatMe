@@ -1,14 +1,16 @@
 import React from 'react'
-import Messages from './Messages'
 
 const Message = () => {
   return (
-    <div className="messages">
-        <Messages />
-        <Messages />
-        <Messages />
-        <Messages />
-        <Messages />
+    <div className="message owner">
+        <div className="messageInfo">
+          <img src='' alt='' />
+          <span>just now</span>
+        </div>
+        <div className="messageContent">
+          <p>Hello</p>
+          <img src='' alt='' />
+        </div>
     </div>
   )
 }

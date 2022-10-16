@@ -3,7 +3,7 @@ import React from 'react'
 import cam from '../images/cam.png'
 import add from '../images/add.png'
 import about from '../images/more.png'
-import Message from './Message'
+import Messages from './Messages'
 import Input from './Input'
 
 const Chat = () => {
@@ -18,7 +18,7 @@ const Chat = () => {
         </div>
       </div>
 
-      <Message />
+      <Messages />
 
       <Input />
     </div>
