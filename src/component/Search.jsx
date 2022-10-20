@@ -8,7 +8,7 @@ const Search = () => {
         </div>
 
         <div className="userChat">
-            <img src='userDP' alt='userDP' />
+            <img src='https://drive.google.com/file/d/1z9QKqOGej4zktv2_BbipSonMkk7TwUmY/view?usp=sharing' alt='' />
             <div className='userChatInfo'>
                 <span>Name</span>
             </div>

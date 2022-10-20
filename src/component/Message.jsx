@@ -4,12 +4,12 @@ const Message = () => {
   return (
     <div className="message owner">
         <div className="messageInfo">
-          <img src='' alt='' />
+          <img src='https://drive.google.com/file/d/1z9QKqOGej4zktv2_BbipSonMkk7TwUmY/view?usp=sharing' alt='' />
           <span>just now</span>
         </div>
         <div className="messageContent">
           <p>Hello</p>
-          <img src='' alt='' />
+          <img src='https://drive.google.com/file/d/1z9QKqOGej4zktv2_BbipSonMkk7TwUmY/view?usp=sharing' alt='' />
         </div>
     </div>
   )

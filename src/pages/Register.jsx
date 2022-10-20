@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate, Link } from 'react-router-dom'
 import { storage, auth, db } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -8,7 +9,8 @@ import avatar from "../images/addAvatar.png";
 
 const Register = () => {
 
-    const [ err, setErr ] = useState('');
+  const navigate = useNavigate();
+  const [ err, setErr ] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,6 +46,9 @@ const Register = () => {
                     email,
                     photoURL: downloadURL,
                   });
+
+                  await setDoc(doc(db, "userChat", res.user.uid), {})
+                  navigate('/');
                 }
                 catch (error) {
                   setErr(error.message)
