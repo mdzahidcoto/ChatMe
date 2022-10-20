@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { auth } from '../firebase';
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { getStorage, ref, uploadBytesResumable } from "firebase/storage";
+import { storage, auth, db } from '../firebase';
+import { doc, setDoc } from 'firebase/firestore';
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 
 import avatar from "../images/addAvatar.png";
 
 const Register = () => {
 
-    const [ err, setErr ] = useState(false);
+    const [ err, setErr ] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,14 +22,38 @@ const Register = () => {
     try{
         const res = await createUserWithEmailAndPassword(auth, email, password);
 
-        const storage = getStorage();
         const storageRef = ref(storage, displayName);
-
         const uploadTask = uploadBytesResumable(storageRef, file);
 
+        uploadTask.on(
+          (error) => {
+            setErr(error.message);
+          }, 
+          () => {
+            getDownloadURL(uploadTask.snapshot.ref)
+              .then( async (downloadURL) => {
+                try {
+                  await updateProfile(res.user, {
+                    displayName,
+                    photoUrl: downloadURL,
+                  });
+  
+                  await setDoc(doc(db, "users", res.user.uid), {
+                    uid: res.user.uid,
+                    displayName,
+                    email,
+                    photoURL: downloadURL,
+                  });
+                }
+                catch (error) {
+                  setErr(error.message)
+                }
+            });
+          }
+        );
     }
-    catch{
-        setErr(true);
+    catch(error) {
+        setErr(error.message);
     }
       
   };
@@ -48,7 +73,7 @@ const Register = () => {
             <span>add an image</span>
           </label>
           <button>Sign Up</button>
-          { err && (<span style={{color: 'red'}}>There was some error...</span>)}
+          { err && (<span style={{color: 'red'}}>{err}</span>)}
         </form>
 
         <p>
