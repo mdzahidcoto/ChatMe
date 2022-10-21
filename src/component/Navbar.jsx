@@ -11,8 +11,8 @@ const Navbar  = () => {
       <span className='logo'>Chat Menu</span>
 
       <div className='user'>
-        <img src={currentUser.photoUrl} alt='' />
-        <span>{currentUser.displayName}</span>
+        <img src={currentUser?.photoUrl} alt='' />
+        <span>{currentUser?.displayName}</span>
         <button onClick={()=> signOut(auth)}>Log Out</button>
       </div>
     </div>

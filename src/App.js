@@ -7,7 +7,7 @@ import { useContext } from "react";
 
 function App() {
   const { currentUser } = useContext(AuthContext);
-  console.log(currentUser)
+  // console.log(currentUser)
 
   const ProtectRoute = ({ children }) => {
     if (!currentUser?.email) {
@@ -23,9 +23,9 @@ function App() {
         <Route
           path="/"
           element={
-            <ProtectRoute>
+            // <ProtectRoute>
               <Home />
-            </ProtectRoute>
+            // </ProtectRoute>
           }
         />
         <Route path="/login" element={<LogIn />} />
