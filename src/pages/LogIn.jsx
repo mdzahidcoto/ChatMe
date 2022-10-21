@@ -11,7 +11,7 @@ const LogIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(e.target[0].value);
+    // console.log(e.target[0].value);
     const email = e.target[0].value;
     const password = e.target[1].value;
 

@@ -10,10 +10,12 @@ function App() {
   console.log(currentUser)
 
   const ProtectRoute = ({ children }) => {
-    if (!currentUser) {
-      return (<Navigate to="/login" />);
+    if (!currentUser?.email) {
+      return <Navigate to="/login" />
     }
-  };
+
+    return children;
+  }
 
   return (
     <BrowserRouter>
