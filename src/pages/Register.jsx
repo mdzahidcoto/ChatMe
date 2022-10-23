@@ -14,7 +14,6 @@ const Register = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     // console.log(e.target[0].value)
     const displayName = e.target[0].value;
     const email = e.target[1].value;
@@ -37,7 +36,7 @@ const Register = () => {
                 try {
                   await updateProfile(res.user, {
                     displayName,
-                    photoUrl: downloadURL,
+                    photoURL: downloadURL,
                   });
   
                   await setDoc(doc(db, "users", res.user.uid), {
